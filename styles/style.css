@@ -1,0 +1,182 @@
+.input_messages {
+	position: absolute;
+	-webkit-animation: cssAnimation 2s forwards; 
+    animation: cssAnimation 2s forwards;
+}
+
+@keyframes cssAnimation {
+    0%   {opacity: 1;}
+    40%   {opacity: 0.9;}
+    50%   {opacity: 0.8;}
+    60%   {opacity: 0.7;}
+    70%   {opacity: 0.6;}
+    80%   {opacity: 0.5;}
+    90%   {opacity: 0.4;}
+    99%   {opacity: 0.2; z-index: 0;}
+    100%   {opacity: 0; z-index: -1;}
+}
+@-webkit-keyframes cssAnimation {
+    0%   {opacity: 1;}
+    40%   {opacity: 0.9;}
+    50%   {opacity: 0.8;}
+    60%   {opacity: 0.7;}
+    70%   {opacity: 0.6;}
+    80%   {opacity: 0.5;}
+    90%   {opacity: 0.4;}
+    99%   {opacity: 0.2; z-index: 0;}
+    100%   {opacity: 0; z-index: -1;}
+}
+
+.logoutButton {
+	
+}
+
+.personalInformation {}
+.personalInformation label {}
+.personalInformation span {}
+
+pre {
+	white-space: pre-line;
+	font-family: Arial;
+}
+
+.table-hover-pointer tbody tr:hover{
+	cursor: pointer;
+}
+
+.navbar {
+  border-radius: 0;
+}
+
+footer {
+  background-color: #555;
+  color: white;
+  padding: 10px;
+}
+
+.row {
+	padding-bottom: 10px;
+}
+
+.hideByClass_now, .hideByTerm, .hideByFor_class { display: none!important; }
+
+.form-inline > * {
+   margin: 5px 10px;
+}
+
+/* за филтрите на таблицата с оценките */
+.filters select {
+	min-width: 300px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+td .glyphicon {
+	font-size: 1.5em;
+	vertical-align: middle;
+	margin-left: 10px;
+}
+
+
+
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	/* Force table to not be like tables anymore */
+	.table-mobile table, .table-mobile thead, .table-mobile tbody, .table-mobile th, .table-mobile td, .table-mobile tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	.table-mobile thead tr { 
+		display: none;
+	}
+	
+	.table-mobile tr { 
+		border: 1px solid #ccc; 
+		margin-bottom: 10px;
+	}
+	
+	.table-mobile td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+		text-align: right;
+	}
+	
+	.table-mobile td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		left: 6px; 
+		white-space: nowrap;
+	}
+	
+	/*
+	Label the data
+	*/
+	.table-mobile td:nth-of-type(1):before { content: "Ученик"; }
+	.table-mobile td:nth-of-type(2):before { content: "Номер в клас"; }
+	.table-mobile td:nth-of-type(3):before { content: "Клас"; }
+	.table-mobile td:nth-of-type(4):before { content: "Предмет"; }
+	.table-mobile td:nth-of-type(5):before { content: "Оценка"; }
+	.table-mobile td:nth-of-type(6):before { content: "Срок"; }
+	.table-mobile td:nth-of-type(7):before { content: "За клас"; }
+	.table-mobile td:nth-of-type(8):before { content: "Добавена от"; }
+	.table-mobile td:nth-of-type(9):before { content: "Действие"; }
+	
+	/*
+	Ако е таблицата за годишните оценки
+	*/
+	.table-mobile-session td:nth-of-type(1):before { content: "Ученик"; }
+	.table-mobile-session td:nth-of-type(2):before { content: "Номер в клас"; }
+	.table-mobile-session td:nth-of-type(3):before { content: "Клас"; }
+	.table-mobile-session td:nth-of-type(4):before { content: "Предмет"; }
+	.table-mobile-session td:nth-of-type(5):before { content: "Оценка"; }
+	.table-mobile-session td:nth-of-type(6):before { content: "За клас"; }
+	.table-mobile-session td:nth-of-type(7):before { content: "Добавена от"; }
+	.table-mobile-session td:nth-of-type(8):before { content: "Действие"; }
+	
+	/*
+	Ако е таблицата за учениците
+	*/
+	.table-mobile-students td:nth-of-type(1):before { content: "ЕГН"; }
+	.table-mobile-students td:nth-of-type(2):before { content: "Име"; }
+	.table-mobile-students td:nth-of-type(3):before { content: "Презиме"; }
+	.table-mobile-students td:nth-of-type(4):before { content: "Фамилия"; }
+	.table-mobile-students td:nth-of-type(5):before { content: "Номер в клас"; }
+	.table-mobile-students td:nth-of-type(6):before { content: "Клас"; }
+	.table-mobile-students td:nth-of-type(7):before { content: "Действие"; }
+	
+	/*
+	Ако е таблицата за учителите
+	*/
+	.table-mobile-teachers td:nth-of-type(1):before { content: "Име"; }
+	.table-mobile-teachers td:nth-of-type(2):before { content: "Фамилия"; }
+	.table-mobile-teachers td:nth-of-type(3):before { content: "Потребителско име"; }
+	.table-mobile-teachers td:nth-of-type(4):before { content: "Действие"; }
+	
+}
